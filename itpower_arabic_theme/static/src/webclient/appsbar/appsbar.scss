@@ -1,0 +1,147 @@
+// Apps sidebar. Written left-to-right; rtlcss mirrors it for Arabic, so the
+// bar sits on the right and the arrows point the right way.
+
+.o_web_client:has(> .o_itp_appsbar) {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+
+    > .o_navbar {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+    > .o_itp_appsbar {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    > .o_action_manager,
+    > .o_main_components_container {
+        grid-column: 2;
+        grid-row: 2;
+        min-width: 0;
+    }
+}
+
+.o_itp_appsbar {
+    width: $itp-sidebar-width;
+    background: var(--itp-sidebar);
+    color: var(--itp-on-dark-muted);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: width .18s ease;
+    z-index: 2;
+
+    &.o_itp_expanded {
+        width: $itp-sidebar-width-expanded;
+    }
+
+    .o_itp_appsbar_list {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 8px 0;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, .2) transparent;
+    }
+
+    .o_itp_appsbar_item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: 48px;
+        padding: 0 14px;
+        color: var(--itp-on-dark-muted);
+        text-decoration: none;
+        white-space: nowrap;
+        border-left: 3px solid transparent;
+
+        &:hover,
+        &:focus-visible {
+            background: rgba(255, 255, 255, .08);
+            color: var(--itp-on-dark);
+            outline: none;
+        }
+
+        &.active {
+            background: color-mix(in srgb, var(--itp-accent) 18%, transparent);
+            border-left-color: var(--itp-accent);
+            color: var(--itp-on-dark);
+            font-weight: 600;
+        }
+    }
+
+    .o_itp_appsbar_icon {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+        }
+
+        .o_itp_fonticon,
+        .o_itp_letter {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .o_itp_letter {
+            background: var(--itp-primary);
+            color: #fff;
+            font-weight: 700;
+        }
+    }
+
+    .o_itp_appsbar_name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        opacity: 0;
+        transition: opacity .15s ease;
+    }
+
+    &.o_itp_expanded .o_itp_appsbar_name {
+        opacity: 1;
+    }
+
+    .o_itp_appsbar_toggle {
+        flex: 0 0 44px;
+        border: 0;
+        border-top: 1px solid rgba(255, 255, 255, .08);
+        background: transparent;
+        color: var(--itp-on-dark-muted);
+        font-size: 18px;
+
+        &:hover,
+        &:focus-visible {
+            color: var(--itp-on-dark);
+            background: rgba(255, 255, 255, .08);
+        }
+
+        .o_itp_flip {
+            transform: scaleX(-1);
+        }
+    }
+}
+
+// Phones and small tablets: no sidebar, the apps menu does the job.
+@include media-breakpoint-down(md) {
+    .o_web_client:has(> .o_itp_appsbar) {
+        display: flex;
+    }
+    .o_itp_appsbar {
+        display: none;
+    }
+}

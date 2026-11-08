@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Brand colors from the company settings, exposed as CSS variables,
+         and the company's browser tab icon. -->
+    <template id="webclient_bootstrap" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//t[@t-call-assets='web.assets_web']/.." position="after">
+            <t t-set="itp_colors" t-value="request.env.company._itp_theme_colors()"/>
+            <t t-set="itp_version" t-value="request.env.company.write_date and int(request.env.company.write_date.timestamp()) or 0"/>
+            <style id="itp_theme_colors">
+                :root {
+                    --itp-brand: <t t-out="itp_colors['itp_color_brand']"/>;
+                    --itp-sidebar: <t t-out="itp_colors['itp_color_sidebar']"/>;
+                    --itp-primary: <t t-out="itp_colors['itp_color_primary']"/>;
+                    --itp-accent: <t t-out="itp_colors['itp_color_accent']"/>;
+                    --itp-apps-bg: url('/itpower_arabic_theme/apps_background?v=<t t-out="itp_version"/>');
+                }
+            </style>
+            <link rel="icon" t-attf-href="/itpower_arabic_theme/favicon?v={{ itp_version }}"/>
+        </xpath>
+    </template>
+
+</odoo>

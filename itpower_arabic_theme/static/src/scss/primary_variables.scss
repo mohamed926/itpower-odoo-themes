@@ -1,0 +1,25 @@
+// IT Power Arabic Backend Theme: compile-time defaults.
+// Runtime colors come from the company settings as CSS variables (see theme.scss).
+
+$itp-brand: #17324A !default;
+$itp-sidebar: #102536 !default;
+$itp-primary: #3F729C !default;
+$itp-accent: #F28C28 !default;
+
+$o-community-color: $itp-brand;
+$o-brand-odoo: $itp-brand;
+$o-brand-primary: $itp-primary;
+$o-enterprise-color: $itp-brand;
+$o-enterprise-action-color: $itp-primary;
+
+$o-success: #2E9E5B;
+$o-info: #3B8FC4;
+$o-warning: $itp-accent;
+$o-danger: #D64545;
+
+// Arabic-first font stack. IBM Plex Sans Arabic ships with the module and
+// also covers Latin, so mixed Arabic/English text shares one family.
+$o-system-fonts: ("IBM Plex Sans Arabic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+
+$itp-sidebar-width: 64px;
+$itp-sidebar-width-expanded: 220px;

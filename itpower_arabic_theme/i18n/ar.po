@@ -1,0 +1,196 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* itpower_arabic_theme
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-08 15:18+0000\n"
+"PO-Revision-Date: 2026-11-08 15:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: itpower_arabic_theme
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_company__itp_color_accent
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_config_settings__itp_color_accent
+msgid "Accent Color"
+msgstr "لون التمييز"
+
+#. module: itpower_arabic_theme
+#. odoo-javascript
+#: code:addons/itpower_arabic_theme/static/src/webclient/appsbar/appsbar.xml:0
+#, python-format
+msgid "Apps"
+msgstr "التطبيقات"
+
+#. module: itpower_arabic_theme
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_company__itp_apps_background
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_config_settings__itp_apps_background
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid "Apps Menu Background"
+msgstr "خلفية قائمة التطبيقات"
+
+#. module: itpower_arabic_theme
+#. odoo-javascript
+#: code:addons/itpower_arabic_theme/static/src/webclient/appsmenu/appsmenu.xml:0
+#, python-format
+msgid "Apps menu"
+msgstr "قائمة التطبيقات"
+
+#. module: itpower_arabic_theme
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid "Backend Theme"
+msgstr "ثيم الواجهة"
+
+#. module: itpower_arabic_theme
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_company__itp_favicon
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_config_settings__itp_favicon
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid "Browser Tab Icon"
+msgstr "أيقونة تبويب المتصفح"
+
+#. module: itpower_arabic_theme
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid "Buttons"
+msgstr "الأزرار"
+
+#. module: itpower_arabic_theme
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_company__itp_color_primary
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_config_settings__itp_color_primary
+msgid "Buttons Color"
+msgstr "لون الأزرار"
+
+#. module: itpower_arabic_theme
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid ""
+"Colors of the top bar, the apps sidebar, the buttons and the highlights. "
+"Reload the page after saving."
+msgstr "ألوان الشريط العلوي وشريط التطبيقات الجانبي والأزرار والتمييز. أعد تحميل الصفحة بعد الحفظ."
+
+#. module: itpower_arabic_theme
+#: model:ir.model,name:itpower_arabic_theme.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: itpower_arabic_theme
+#: model:ir.model,name:itpower_arabic_theme.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات"
+
+#. module: itpower_arabic_theme
+#. odoo-javascript
+#: code:addons/itpower_arabic_theme/static/src/webclient/appsmenu/appsmenu.js:0
+#, python-format
+msgid "Good afternoon, %s"
+msgstr "مساء الخير، %s"
+
+#. module: itpower_arabic_theme
+#. odoo-javascript
+#: code:addons/itpower_arabic_theme/static/src/webclient/appsmenu/appsmenu.js:0
+#, python-format
+msgid "Good evening, %s"
+msgstr "مساء الخير، %s"
+
+#. module: itpower_arabic_theme
+#. odoo-javascript
+#: code:addons/itpower_arabic_theme/static/src/webclient/appsmenu/appsmenu.js:0
+#, python-format
+msgid "Good morning, %s"
+msgstr "صباح الخير، %s"
+
+#. module: itpower_arabic_theme
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid "Highlights"
+msgstr "التمييز"
+
+#. module: itpower_arabic_theme
+#. odoo-javascript
+#: code:addons/itpower_arabic_theme/static/src/webclient/webclient.xml:0
+#: code:addons/itpower_arabic_theme/static/src/webclient/webclient.xml:0
+#, python-format
+msgid "Home Menu"
+msgstr "القائمة الرئيسية"
+
+#. module: itpower_arabic_theme
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid "Image shown behind the full-screen apps menu."
+msgstr "الصورة التي تظهر خلف قائمة التطبيقات بملء الشاشة."
+
+#. module: itpower_arabic_theme
+#. odoo-javascript
+#: code:addons/itpower_arabic_theme/static/src/webclient/appsmenu/appsmenu.xml:0
+#, python-format
+msgid "No app or menu matches your search."
+msgstr "لا يوجد تطبيق أو قائمة تطابق بحثك."
+
+#. module: itpower_arabic_theme
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid "Reset to the default theme"
+msgstr "استعادة الثيم الافتراضي"
+
+#. module: itpower_arabic_theme
+#. odoo-javascript
+#: code:addons/itpower_arabic_theme/static/src/webclient/appsmenu/appsmenu.xml:0
+#, python-format
+msgid "Search apps and menus"
+msgstr "ابحث في التطبيقات والقوائم"
+
+#. module: itpower_arabic_theme
+#. odoo-javascript
+#: code:addons/itpower_arabic_theme/static/src/webclient/appsmenu/appsmenu.xml:0
+#, python-format
+msgid "Search apps and menus…"
+msgstr "ابحث في التطبيقات والقوائم…"
+
+#. module: itpower_arabic_theme
+#. odoo-javascript
+#: code:addons/itpower_arabic_theme/static/src/webclient/appsbar/appsbar.xml:0
+#: code:addons/itpower_arabic_theme/static/src/webclient/appsbar/appsbar.xml:0
+#, python-format
+msgid "Show or hide app names"
+msgstr "إظهار أو إخفاء أسماء التطبيقات"
+
+#. module: itpower_arabic_theme
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid "Sidebar"
+msgstr "الشريط الجانبي"
+
+#. module: itpower_arabic_theme
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_company__itp_color_sidebar
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_config_settings__itp_color_sidebar
+msgid "Sidebar Color"
+msgstr "لون الشريط الجانبي"
+
+#. module: itpower_arabic_theme
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid "Small icon shown in the browser tab (favicon)."
+msgstr "الأيقونة الصغيرة التي تظهر في تبويب المتصفح."
+
+#. module: itpower_arabic_theme
+#. odoo-python
+#: code:addons/itpower_arabic_theme/models/res_company.py:0
+#, python-format
+msgid "The color \"%s\" must be a hex code like #17324A."
+msgstr "اللون \"%s\" يجب أن يكون كود ألوان مثل #17324A."
+
+#. module: itpower_arabic_theme
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid "Theme Colors"
+msgstr "ألوان الثيم"
+
+#. module: itpower_arabic_theme
+#: model_terms:ir.ui.view,arch_db:itpower_arabic_theme.res_config_settings_view_form
+msgid "Top Bar"
+msgstr "الشريط العلوي"
+
+#. module: itpower_arabic_theme
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_company__itp_color_brand
+#: model:ir.model.fields,field_description:itpower_arabic_theme.field_res_config_settings__itp_color_brand
+msgid "Top Bar Color"
+msgstr "لون الشريط العلوي"

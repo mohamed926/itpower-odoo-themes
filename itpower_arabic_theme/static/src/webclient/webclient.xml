@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="itpower_arabic_theme.WebClient" t-inherit="web.WebClient" t-inherit-mode="extension">
+        <xpath expr="//NavBar" position="after">
+            <ItpAppsBar/>
+        </xpath>
+        <xpath expr="//t[@t-if='!state.fullscreen']" position="after">
+            <ItpAppsMenu/>
+        </xpath>
+    </t>
+
+    <!-- The apps button opens the full-screen apps menu instead of a dropdown. -->
+    <t t-name="itpower_arabic_theme.NavBar.AppsMenu" t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension">
+        <xpath expr="//Dropdown" position="replace">
+            <button type="button" class="o_itp_apps_toggle o_navbar_apps_menu btn"
+                    t-att-class="{ active: itpThemeState.appsMenuOpen }"
+                    t-on-click="() => this.itpTheme.toggleAppsMenu()"
+                    t-att-aria-expanded="itpThemeState.appsMenuOpen ? 'true' : 'false'"
+                    title="Home Menu" aria-label="Home Menu" data-hotkey="h">
+                <i t-if="!itpThemeState.appsMenuOpen" class="oi oi-apps"/>
+                <i t-else="" class="oi oi-close"/>
+            </button>
+        </xpath>
+    </t>
+
+</templates>

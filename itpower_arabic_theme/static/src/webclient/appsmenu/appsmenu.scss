@@ -1,0 +1,221 @@
+// Full-screen apps menu, below the top bar.
+
+.o_navbar {
+    position: relative;
+    z-index: 960; // keep the bar and its dropdowns above the apps menu
+}
+
+.o_itp_appsmenu {
+    position: fixed;
+    inset: var(--o-navbar-height, 46px) 0 0 0;
+    z-index: 950;
+    overflow-y: auto;
+    color: #fff;
+    background-color: var(--itp-brand);
+    background-image: var(--itp-apps-bg, none);
+    background-size: cover;
+    background-position: center;
+    animation: o_itp_fade_in .14s ease-out;
+
+    .o_itp_appsmenu_inner {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 48px 24px 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .o_itp_greeting {
+        text-align: center;
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .o_itp_today {
+            margin-top: 4px;
+            color: var(--itp-on-dark-muted);
+            font-size: 1rem;
+        }
+    }
+
+    .o_itp_search {
+        width: 100%;
+        max-width: 560px;
+        height: 50px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0 20px;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, .14);
+        border: 1px solid rgba(255, 255, 255, .25);
+        color: var(--itp-on-dark-muted);
+
+        &:focus-within {
+            background: rgba(255, 255, 255, .2);
+            border-color: var(--itp-accent);
+        }
+
+        .o_itp_search_input {
+            flex: 1 1 auto;
+            min-width: 0;
+            border: 0;
+            outline: none;
+            background: transparent;
+            color: #fff;
+            font-size: 1.05rem;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, .7);
+            }
+        }
+    }
+
+    .o_itp_apps_grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+        gap: 26px 18px;
+    }
+
+    .o_itp_app {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 4px;
+        border-radius: 14px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+
+        &:hover,
+        &:focus-visible {
+            background: rgba(255, 255, 255, .1);
+            outline: none;
+
+            .o_itp_app_icon {
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    .o_itp_app_icon {
+        width: 76px;
+        height: 76px;
+        border-radius: 18px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, .25);
+        transition: transform .12s ease;
+
+        img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+        }
+    }
+
+    .o_itp_app_name {
+        font-size: .95rem;
+        font-weight: 500;
+        line-height: 1.35;
+    }
+
+    .o_itp_results {
+        width: 100%;
+        max-width: 640px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .o_itp_result {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        color: #fff;
+        text-decoration: none;
+        background: rgba(255, 255, 255, .06);
+
+        &.focus {
+            background: rgba(255, 255, 255, .18);
+            box-shadow: inset 3px 0 0 var(--itp-accent);
+        }
+    }
+
+    .o_itp_result_icon {
+        flex: 0 0 34px;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        img {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+        }
+    }
+
+    .o_itp_no_result {
+        text-align: center;
+        color: var(--itp-on-dark-muted);
+        padding: 24px;
+    }
+
+    .o_itp_fonticon,
+    .o_itp_letter {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+    }
+
+    .o_itp_letter {
+        background: var(--itp-primary);
+        color: #fff;
+        font-weight: 700;
+    }
+}
+
+@keyframes o_itp_fade_in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@include media-breakpoint-down(md) {
+    .o_itp_appsmenu {
+        .o_itp_appsmenu_inner {
+            padding-top: 28px;
+        }
+        .o_itp_greeting h1 {
+            font-size: 1.5rem;
+        }
+        .o_itp_apps_grid {
+            grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+        }
+        .o_itp_app_icon {
+            width: 62px;
+            height: 62px;
+        }
+    }
+}

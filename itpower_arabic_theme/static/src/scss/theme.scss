@@ -1,0 +1,133 @@
+// IT Power Arabic Backend Theme: runtime colors.
+// The CSS variables are written into the page from the company settings
+// (views/webclient_templates.xml). Write rules for left-to-right: Odoo runs
+// rtlcss on the bundle for right-to-left languages, which mirrors them.
+
+:root {
+    --itp-brand: #{$itp-brand};
+    --itp-sidebar: #{$itp-sidebar};
+    --itp-primary: #{$itp-primary};
+    --itp-accent: #{$itp-accent};
+    --itp-on-dark: #F8FAFC;
+    --itp-on-dark-muted: #D6E2EC;
+}
+
+// ---------------------------------------------------------------- Top bar
+.o_main_navbar {
+    background: var(--itp-brand);
+    border-bottom: 0;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .12);
+
+    .o_menu_brand {
+        font-weight: 600;
+    }
+
+    // Underline the open section in the accent color.
+    .o_menu_sections .o_nav_entry.active,
+    .o_menu_sections .dropdown-toggle.active,
+    .o_menu_sections .show > .dropdown-toggle {
+        box-shadow: inset 0 -3px 0 var(--itp-accent);
+    }
+
+    .o_nav_entry,
+    .dropdown-toggle,
+    .o_menu_systray > div > a,
+    .o_menu_systray .dropdown-toggle {
+        &:hover,
+        &:focus-visible {
+            background: rgba(255, 255, 255, .1);
+        }
+    }
+
+    .o_navbar_apps_menu,
+    .o_itp_apps_toggle {
+        .dropdown-toggle,
+        & {
+            min-width: 46px;
+        }
+    }
+}
+
+// ---------------------------------------------------------------- Buttons
+.btn-primary {
+    --itp-btn: var(--itp-primary);
+    background-color: var(--itp-btn);
+    border-color: var(--itp-btn);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: color-mix(in srgb, var(--itp-btn) 86%, #000);
+        border-color: color-mix(in srgb, var(--itp-btn) 80%, #000);
+    }
+
+    &:disabled,
+    &.disabled {
+        background-color: var(--itp-btn);
+        border-color: var(--itp-btn);
+    }
+}
+
+.btn-outline-primary {
+    color: var(--itp-primary);
+    border-color: var(--itp-primary);
+
+    &:hover,
+    &:active,
+    &.active {
+        color: #fff;
+        background-color: var(--itp-primary);
+        border-color: var(--itp-primary);
+    }
+}
+
+// Notebook tabs: accent underline on the active tab.
+.o_notebook .nav-tabs .nav-link.active {
+    box-shadow: inset 0 -3px 0 var(--itp-accent);
+}
+
+// Settings page: the color pickers sit in a tidy two-column grid.
+.o_itp_colors_grid {
+    display: grid;
+    grid-template-columns: max-content 3rem;
+    gap: .5rem 1.5rem;
+    align-items: center;
+
+    .o_field_color {
+        width: 2rem;
+    }
+}
+
+// ---------------------------------------------------------------- Arabic text
+// Slightly taller lines read better for Arabic script (body.o_rtl is set by
+// Odoo for right-to-left languages).
+.o_web_client.o_rtl {
+    line-height: 1.6;
+
+    .o_list_renderer .o_data_row > td,
+    .o_list_renderer thead th {
+        line-height: 1.5;
+    }
+}
+
+// The apps button that opens the full-screen apps menu.
+.o_main_navbar .o_itp_apps_toggle {
+    height: var(--o-navbar-height, 46px);
+    padding: 0 14px;
+    border: 0;
+    border-radius: 0;
+    color: var(--itp-on-dark);
+    font-size: 1.15rem;
+
+    &:hover,
+    &:focus-visible,
+    &.active {
+        color: #fff;
+        background: rgba(255, 255, 255, .12);
+    }
+
+    &.active {
+        box-shadow: inset 0 -3px 0 var(--itp-accent);
+    }
+}

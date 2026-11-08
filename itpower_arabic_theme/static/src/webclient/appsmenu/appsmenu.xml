@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="itpower_arabic_theme.AppsMenu">
+        <div t-if="themeState.appsMenuOpen" class="o_itp_appsmenu d-print-none" role="dialog" aria-label="Apps menu" t-on-keydown="onKeydown">
+            <div class="o_itp_appsmenu_inner">
+                <div class="o_itp_greeting">
+                    <h1 t-esc="greeting"/>
+                    <div class="o_itp_today" t-esc="today"/>
+                </div>
+
+                <label class="o_itp_search">
+                    <i class="oi oi-search" aria-hidden="true"/>
+                    <input t-ref="search" type="search" class="o_itp_search_input"
+                           t-model="state.query" t-on-input="onInput"
+                           placeholder="Search apps and menus…" aria-label="Search apps and menus"
+                           autocomplete="off"/>
+                </label>
+
+                <t t-if="state.query.trim()">
+                    <div class="o_itp_results" role="listbox">
+                        <a t-foreach="results" t-as="item" t-key="item.id"
+                           class="o_itp_result" t-att-class="{ focus: item_index === state.focus }"
+                           t-att-href="item.href" role="option"
+                           t-att-aria-selected="item_index === state.focus ? 'true' : 'false'"
+                           t-on-click="(ev) => this.open(item, ev)"
+                           t-on-mouseenter="() => this.state.focus = item_index">
+                            <span class="o_itp_result_icon">
+                                <img t-if="item.icon.src" t-att-src="item.icon.src" alt=""/>
+                                <span t-elif="item.icon.iconClass" class="o_itp_fonticon" t-att-style="iconStyle(item.icon)"><i t-att-class="item.icon.iconClass"/></span>
+                                <span t-else="" class="o_itp_letter" t-esc="item.icon.letter"/>
+                            </span>
+                            <span class="o_itp_result_label" t-esc="item.label"/>
+                        </a>
+                        <div t-if="!results.length" class="o_itp_no_result">No app or menu matches your search.</div>
+                    </div>
+                </t>
+                <div t-else="" class="o_itp_apps_grid">
+                    <a t-foreach="apps" t-as="app" t-key="app.id" class="o_itp_app"
+                       t-att-href="app.href" t-att-data-menu-xmlid="app.xmlid"
+                       t-on-click="(ev) => this.open(app, ev)">
+                        <span class="o_itp_app_icon">
+                            <img t-if="app.icon.src" t-att-src="app.icon.src" alt=""/>
+                            <span t-elif="app.icon.iconClass" class="o_itp_fonticon" t-att-style="iconStyle(app.icon)"><i t-att-class="app.icon.iconClass"/></span>
+                            <span t-else="" class="o_itp_letter" t-esc="app.icon.letter"/>
+                        </span>
+                        <span class="o_itp_app_name" t-esc="app.name"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

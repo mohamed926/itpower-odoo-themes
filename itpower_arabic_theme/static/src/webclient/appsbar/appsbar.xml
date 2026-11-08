@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="itpower_arabic_theme.AppsBar">
+        <nav class="o_itp_appsbar d-print-none" t-att-class="{ o_itp_expanded: themeState.sidebarExpanded }" aria-label="Apps">
+            <div class="o_itp_appsbar_list">
+                <a t-foreach="apps" t-as="app" t-key="app.id"
+                   class="o_itp_appsbar_item"
+                   t-att-class="{ active: app.active }"
+                   t-att-href="app.href"
+                   t-att-data-menu-xmlid="app.xmlid"
+                   t-att-data-tooltip="themeState.sidebarExpanded ? undefined : app.name"
+                   data-tooltip-position="right"
+                   t-att-aria-current="app.active ? 'page' : undefined"
+                   t-on-click="(ev) => this.onAppClick(app, ev)">
+                    <span class="o_itp_appsbar_icon">
+                        <img t-if="app.icon.src" t-att-src="app.icon.src" alt=""/>
+                        <span t-elif="app.icon.iconClass" class="o_itp_fonticon" t-att-style="iconStyle(app.icon)">
+                            <i t-att-class="app.icon.iconClass"/>
+                        </span>
+                        <span t-else="" class="o_itp_letter" t-esc="app.icon.letter"/>
+                    </span>
+                    <span class="o_itp_appsbar_name" t-esc="app.name"/>
+                </a>
+            </div>
+            <button type="button" class="o_itp_appsbar_toggle"
+                    t-on-click="() => this.theme.toggleSidebar()"
+                    t-att-aria-expanded="themeState.sidebarExpanded ? 'true' : 'false'"
+                    title="Show or hide app names" aria-label="Show or hide app names">
+                <i class="fa fa-angle-double-right" t-att-class="{ 'o_itp_flip': themeState.sidebarExpanded }"/>
+            </button>
+        </nav>
+    </t>
+
+</templates>
